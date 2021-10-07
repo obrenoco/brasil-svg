@@ -1,0 +1,12 @@
+.subtitles {
+  position: relative;
+  bottom: 0px;
+  left: 10px;
+  width: fit-content;
+  padding: 5px 15px;
+  color: #8a8787;
+  font-family: "Teko", sans-serif;
+  text-decoration: none;
+  font-size: 0.8rem;
+  border: #df6a0c dashed 1px;
+}

@@ -1,0 +1,83 @@
+{
+  "data": [{
+      "id": "UF.Acre",
+      "title": "Acre",
+      "value": 0
+    },
+    {
+      "id": "UF.Rondônia",
+      "title": "Rondônia",
+      "value": 60
+    },
+    {
+      "id": "UF.Amazonas",
+      "title": "Amazonas",
+      "value": 40
+    },
+    {
+      "id": "UF.Roraima",
+      "title": "Roraima",
+      "value": 120
+    },
+    {
+      "id": "UF.MatoGrosso",
+      "title": "Mato Grosso",
+      "value": 80
+    },
+    {
+      "id": "UF.Amapa",
+      "title": "Amapa",
+      "value": 80
+    },
+    {
+      "id": "UF.Tocantins",
+      "title": "Tocantins",
+      "value": 80
+    },
+    {
+      "id": "UF.Goias",
+      "title": "Goias",
+      "value": 20
+    },
+    {
+      "id": "UF.MatoGrossodoSul",
+      "title": "Mato Grosso do Sul",
+      "value": 20
+    },
+    {
+      "id": "UF.MinasGerais",
+      "title": "Minas Gerais",
+      "value": 180
+    },
+    {
+      "id": "UF.Parana",
+      "title": "Paraná",
+      "value": 180
+    },
+    {
+      "id": "UF.RioGrandedoSul",
+      "title": "Rio Grande do Sul",
+      "value": 10
+    },
+    {
+      "id": "UF.Bahia",
+      "title": "Bahia",
+      "value": 160
+    },
+    {
+      "id": "UF.Piaui",
+      "title": "Piauí",
+      "value": 0
+    },
+    {
+      "id": "UF.Ceara",
+      "title": "Ceara",
+      "value": 90
+    },
+    {
+      "id": "UF.RioGrandedoNorte",
+      "title": "Rio Grande do Norte",
+      "value": 10
+    }
+  ]
+}

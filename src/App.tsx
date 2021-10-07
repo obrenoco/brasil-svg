@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./index.css";
 
-function App() {
+export default function App() {
+  // const [data, setData] = useState<DataProps>();
+
+  // useEffect(() => {
+  //   const req = () => {
+  //     try {
+  //       // const response = mock as DataPrps;
+  //       // setData(response);
+  //     } catch (error) { }
+  //   };
+  //   req();
+  // }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <h1 style={{ textAlign: "center" }}>Brasil SVG</h1>
+    {/* <Brasil /> */}
+    <a href="/" target="_blank" id="author">
+      Made by: Brenoco
+    </a>
+  </div>
   );
 }
-
-export default App;
