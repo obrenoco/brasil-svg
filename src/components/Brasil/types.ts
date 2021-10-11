@@ -1,3 +1,21 @@
+export type DataProps = {
+  data: StateProps[];
+  status: string;
+};
+
+export type StateProps = {
+  id: string;
+  title: string;
+  value: number;
+};
+
+export type BrazilSvgProps = {
+  id: UF;
+  title: string;
+  value: number;
+  path: string;
+};
+
 export enum UF {
   Amazonas = "AM",
   Acre = "AC",
@@ -21,7 +39,7 @@ export enum UF {
   Piaui = "PI",
   RioGrandedoNorte = "RN",
   Sergipe = "SE",
-  Rondônia = "RO",
+  Rondonia = "RO",
   Roraima = "RR",
   SantaCatarina = "SC",
   SaoPaulo = "SP",

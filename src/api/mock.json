@@ -1,83 +1,140 @@
 {
-  "data": [{
-      "id": "UF.Acre",
+  "data": [
+    {
+      "id": "AC",
       "title": "Acre",
       "value": 0
     },
     {
-      "id": "UF.Rondônia",
-      "title": "Rondônia",
-      "value": 60
+      "id": "AL",
+      "title": "Alagoas",
+      "value": 100
     },
     {
-      "id": "UF.Amazonas",
+      "id": "AM",
       "title": "Amazonas",
-      "value": 40
+      "value": 1000
     },
     {
-      "id": "UF.Roraima",
-      "title": "Roraima",
-      "value": 120
-    },
-    {
-      "id": "UF.MatoGrosso",
-      "title": "Mato Grosso",
-      "value": 80
-    },
-    {
-      "id": "UF.Amapa",
+      "id": "AP",
       "title": "Amapa",
-      "value": 80
+      "value": 10000
     },
     {
-      "id": "UF.Tocantins",
-      "title": "Tocantins",
-      "value": 80
-    },
-    {
-      "id": "UF.Goias",
-      "title": "Goias",
-      "value": 20
-    },
-    {
-      "id": "UF.MatoGrossodoSul",
-      "title": "Mato Grosso do Sul",
-      "value": 20
-    },
-    {
-      "id": "UF.MinasGerais",
-      "title": "Minas Gerais",
-      "value": 180
-    },
-    {
-      "id": "UF.Parana",
-      "title": "Paraná",
-      "value": 180
-    },
-    {
-      "id": "UF.RioGrandedoSul",
-      "title": "Rio Grande do Sul",
-      "value": 10
-    },
-    {
-      "id": "UF.Bahia",
+      "id": "BA",
       "title": "Bahia",
-      "value": 160
+      "value": 180
     },
     {
-      "id": "UF.Piaui",
+      "id": "CE",
+      "title": "Ceara",
+      "value": 250
+    },
+    {
+      "id": "ES",
+      "title": "Espirito Santo",
+      "value": 300
+    },
+    {
+      "id": "DF",
+      "title": "Distrito Federal",
+      "value": 340
+    },
+    {
+      "id": "GO",
+      "title": "Goias",
+      "value": 65
+    },
+    {
+      "id": "MA",
+      "title": "Maranhão",
+      "value": 0
+    },
+    {
+      "id": "MT",
+      "title": "Mato Grosso",
+      "value": 0
+    },
+    {
+      "id": "MS",
+      "title": "Mato Grosso do Sul",
+      "value": 0
+    },
+    {
+      "id": "MG",
+      "title": "Minas Gerais",
+      "value": 0
+    },
+    {
+      "id": "PA",
+      "title": "Pará",
+      "value": 0
+    },
+    {
+      "id": "PB",
+      "title": "Paraíba",
+      "value": 0
+    },
+    {
+      "id": "PR",
+      "title": "Paraná",
+      "value": 0
+    },
+    {
+      "id": "PE",
+      "title": "Pernambuco",
+      "value": 0
+    },
+    {
+      "id": "PI",
       "title": "Piauí",
       "value": 0
     },
     {
-      "id": "UF.Ceara",
-      "title": "Ceara",
-      "value": 90
+      "id": "RJ",
+      "title": "Rio de Janeiro",
+      "value": 0
     },
     {
-      "id": "UF.RioGrandedoNorte",
+      "id": "RN",
       "title": "Rio Grande do Norte",
-      "value": 10
+      "value": 0
+    },
+    {
+      "id": "RS",
+      "title": "Rio Grande do Sul",
+      "value": 0
+    },
+    {
+      "id": "RO",
+      "title": "Rondônia",
+      "value": 0
+    },
+    {
+      "id": "RR",
+      "title": "Roraima",
+      "value": 0
+    },
+    {
+      "id": "SC",
+      "title": "Santa Catarina",
+      "value": 0
+    },
+    {
+      "id": "SE",
+      "title": "Sergipe",
+      "value": 0
+    },
+    {
+      "id": "SP",
+      "title": "São Paulo",
+      "value": 0
+    },
+    {
+      "id": "TO",
+      "title": "Tocantins",
+      "value": 0
     }
-  ]
+  ],
+  "status": "success"
 }
