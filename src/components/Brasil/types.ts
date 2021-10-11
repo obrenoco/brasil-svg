@@ -6,7 +6,7 @@ export enum UF {
   Para = "PA",
   Amapa = "AP",
   Tocantins = "TO",
-  Maranhão = "MA",
+  Maranhao = "MA",
   Piaui = "PI",
   Ceara = "CE",
   RioGrandedoNorte = "RN",
@@ -18,12 +18,12 @@ export enum UF {
   MinasGerais = "MG",
   EspíritoSanto = "ES",
   RiodeJaneiro = "RJ",
-  SãoPaulo = "SP",
+  SaoPaulo = "SP",
   Parana = "PR",
   SantaCatarina = "SC",
   RioGrandedoSul = "RS",
   MatoGrossodoSul = "MS",
   MatoGrosso = "MT",
   Goias = "GO",
-  DistritoFederal = "DF"
+  DistritoFederal = "DF",
 }
