@@ -30,7 +30,7 @@ export const Home = () => {
   }, []);
   return (
     <section style={{ width: "70vw", maxWidth: "700px", margin: "0 auto" }}>
-      <BrasilMap data={data} />
+      <BrasilMap data={data} steps={100} />
       <SubTitltes />
     </section>
   );

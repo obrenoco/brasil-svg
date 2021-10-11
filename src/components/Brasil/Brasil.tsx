@@ -15,11 +15,22 @@ type ComponentProps = {
 export const mappedArray = (array: StateProps[]) =>
   Object.assign(
     {},
-    ...array
-      .sort((a, b) => b.value - a.value)
-      .map((item) => ({
-        [item.id]: { id: item.id, title: item.title, value: item.value },
-      }))
+    ...array.map((item) => ({
+      [item.id]: { id: item.id, title: item.title, value: item.value },
+    }))
+  );
+
+export const mappedInitialArray = (array: BrazilSvgProps[]) =>
+  Object.assign(
+    {},
+    ...array.map((item) => ({
+      [item.id]: {
+        id: item.id,
+        title: item.title,
+        value: item.value,
+        path: item.path,
+      },
+    }))
   );
 
 const State = ({
@@ -51,32 +62,35 @@ const State = ({
 type BrasilMapProps = {
   data?: DataProps;
   stroke?: string;
+  steps?: number;
 };
 
-const BrasilMap = ({ data, stroke }: BrasilMapProps) => {
+const BrasilMap = ({ data, stroke, steps = 1 }: BrasilMapProps) => {
   const [items, setItems] = useState<BrazilSvgProps[]>(initialData);
   const mapped = useMemo(() => mappedArray(items), [items]);
   const [color, setColor] = useState();
 
+  const mappedInitial = mappedArray(items);
+
   console.log(color, setColor, stroke, setItems);
 
   const heatmapColor = useCallback((value: number) => {
-    if (value <= 0) return "#CEF1DD";
-    if (value <= 50) return "#7AD599";
-    if (value <= 100) return "#508C53";
-    if (value <= 150000) return "#3E6E41";
+    if (value <= 0) return "#c4c4c4";
+    if (value <= steps) return "#7AD599";
+    if (value <= steps * 2) return "#508C53";
+    if (value <= steps * 3) return "#3E6E41";
+    if (value >= steps * 3) return "#3E6E41";
     return "white";
   }, []);
 
   useEffect(() => {
-    console.log(
-      data?.data.map((x) => ({
-        id: x.id,
-        title: x.title,
-        value: x.value,
-      }))
-    );
-    // setItems(data as any);
+    if (data)
+      return setItems(
+        (data?.data as any).map((x: any) => ({
+          ...x,
+          path: mappedInitialArray(initialData)[x.id].path,
+        }))
+      );
   }, [data]);
 
   return (
@@ -93,7 +107,7 @@ const BrasilMap = ({ data, stroke }: BrasilMapProps) => {
               value={x.value}
               key={x.id}
               path={x.path}
-              stroke={undefined}
+              stroke={stroke}
             />
           );
         })}
