@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.css";
+import { Home } from "./pages/Home/Home";
 
 export default function App() {
   // const [data, setData] = useState<DataProps>();
@@ -16,11 +17,11 @@ export default function App() {
 
   return (
     <div className="App">
-    <h1 style={{ textAlign: "center" }}>Brasil SVG</h1>
-    {/* <Brasil /> */}
-    <a href="/" target="_blank" id="author">
-      Made by: Brenoco
-    </a>
-  </div>
+      <h1 style={{ textAlign: "center" }}>Brasil SVG</h1>
+      <Home />
+      <a href="/" target="_blank" id="author">
+        Made by: Brenoco
+      </a>
+    </div>
   );
 }
