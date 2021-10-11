@@ -58,16 +58,15 @@ const BrasilMap = ({ data, stroke }: BrasilMapProps) => {
   const mapped = useMemo(() => mappedArray(items), [items]);
   const [color, setColor] = useState();
 
-  const heatmapColor = useCallback(
-    (value: number) => {
-      if (value <= 0) return "#CEF1DD";
-      if (value <= 50) return "#7AD599";
-      if (value <= 100) return "#508C53";
-      if (value <= 150000) return "#3E6E41";
-      return "white";
-    },
-    [items]
-  );
+  console.log(color, setColor, stroke, setItems);
+
+  const heatmapColor = useCallback((value: number) => {
+    if (value <= 0) return "#CEF1DD";
+    if (value <= 50) return "#7AD599";
+    if (value <= 100) return "#508C53";
+    if (value <= 150000) return "#3E6E41";
+    return "white";
+  }, []);
 
   useEffect(() => {
     console.log(
