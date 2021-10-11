@@ -1,15 +1,16 @@
 * {
-  font-family: "Bungee Shade", cursive;
+  font-family: "Montserrat", cursive;
+  font-size: 16px;
 }
 
 body {
-  background-color: #212730;
+  background-color: #0b0b0b;
 }
 
 h1 {
-  color: darkseagreen;
+  color: #7ad599;
   cursor: pointer;
-  font-size: 2.2rem;
+  font-size: 4rem;
   width: fit-content;
   margin: 2rem auto;
 }
@@ -20,8 +21,8 @@ h1:hover {
 
 #author {
   position: fixed;
-  bottom: 0px;
-  right: 10px;
+  bottom: 10px;
+  right: 30px;
   color: #8a8787;
   font-family: "Teko", sans-serif;
   text-decoration: none;

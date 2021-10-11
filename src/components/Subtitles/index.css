@@ -9,4 +9,16 @@
   text-decoration: none;
   font-size: 0.8rem;
   border: #df6a0c dashed 1px;
+  display: flex;
+  list-style: none;
+  text-align: center;
+  color: white;
+}
+
+li.subtitle-item {
+  font-size: 0.8rem;
+}
+
+li.subtitle-item:not(:last-child) {
+  margin-right: 8px;
 }

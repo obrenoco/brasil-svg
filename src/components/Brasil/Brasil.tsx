@@ -1,4 +1,5 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { Fragment, useCallback, useEffect, useMemo, useState } from "react";
+import { SubTitltes } from "../Subtitles/Subtitles";
 import { BrazilSvgProps, DataProps, StateProps } from "./types";
 import { initialData } from "./ufs";
 
@@ -63,25 +64,35 @@ type BrasilMapProps = {
   data?: DataProps;
   stroke?: string;
   steps?: number;
+  onClick?: (e: React.MouseEvent<HTMLElement>) => any;
 };
 
-const BrasilMap = ({ data, stroke, steps = 1 }: BrasilMapProps) => {
+export enum ColorSchema {
+  Empty = "#c4c4c4",
+  Min = "#7AD599",
+  Step1 = "#508C53",
+  Step2 = "#3E6E41",
+  Max = "#3E6E41",
+}
+
+const BrasilMap = ({ data, stroke, steps = 1, onClick }: BrasilMapProps) => {
   const [items, setItems] = useState<BrazilSvgProps[]>(initialData);
   const mapped = useMemo(() => mappedArray(items), [items]);
   const [color, setColor] = useState();
 
-  const mappedInitial = mappedArray(items);
-
   console.log(color, setColor, stroke, setItems);
 
-  const heatmapColor = useCallback((value: number) => {
-    if (value <= 0) return "#c4c4c4";
-    if (value <= steps) return "#7AD599";
-    if (value <= steps * 2) return "#508C53";
-    if (value <= steps * 3) return "#3E6E41";
-    if (value >= steps * 3) return "#3E6E41";
-    return "white";
-  }, []);
+  const heatmapColor = useCallback(
+    (value: number) => {
+      if (value <= 0) return ColorSchema.Empty;
+      if (value <= steps) return ColorSchema.Min;
+      if (value <= steps * 2) return ColorSchema.Step1;
+      if (value <= steps * 3) return ColorSchema.Step2;
+      if (value >= steps * 3) return ColorSchema.Max;
+      return "white";
+    },
+    [steps]
+  );
 
   useEffect(() => {
     if (data)
@@ -94,25 +105,28 @@ const BrasilMap = ({ data, stroke, steps = 1 }: BrasilMapProps) => {
   }, [data]);
 
   return (
-    <svg id="br-map" viewBox="0 0 220000 194010">
-      <g id="Estados">
-        {items.map((x) => {
-          console.log(mapped[x.id].value);
-          return (
-            <State
-              id={x.id}
-              color={`${heatmapColor(mapped[x.id].value)}`}
-              onClick={() => {}}
-              title={x.title}
-              value={x.value}
-              key={x.id}
-              path={x.path}
-              stroke={stroke}
-            />
-          );
-        })}
-      </g>
-    </svg>
+    <Fragment>
+      <svg id="br-map" viewBox="0 0 220000 194010">
+        <g id="Estados">
+          {items.map((x) => {
+            console.log(mapped[x.id].value);
+            return (
+              <State
+                id={x.id}
+                color={`${heatmapColor(mapped[x.id].value)}`}
+                onClick={onClick as any}
+                title={x.title}
+                value={x.value}
+                key={x.id}
+                path={x.path}
+                stroke={stroke}
+              />
+            );
+          })}
+        </g>
+      </svg>
+      <SubTitltes step={4} />
+    </Fragment>
   );
 };
 

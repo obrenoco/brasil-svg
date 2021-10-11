@@ -19,7 +19,11 @@ export default function App() {
     <div className="App">
       <h1 style={{ textAlign: "center" }}>Brasil SVG</h1>
       <Home />
-      <a href="/" target="_blank" id="author">
+      <a
+        href="https://github.com/obrenoco/brasil-svg"
+        target="_blank"
+        id="author"
+      >
         Made by: Brenoco
       </a>
     </div>
