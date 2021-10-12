@@ -17,6 +17,9 @@
 
 li.subtitle-item {
   font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 li.subtitle-item:not(:last-child) {

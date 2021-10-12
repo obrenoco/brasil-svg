@@ -70,9 +70,9 @@ type BrasilMapProps = {
 export enum ColorSchema {
   Empty = "#c4c4c4",
   Min = "#7AD599",
-  Step1 = "#508C53",
-  Step2 = "#3E6E41",
-  Max = "#3E6E41",
+  Step1 = "#569559",
+  Step2 = "#3b683e",
+  Max = "#2d4e2f",
 }
 
 const BrasilMap = ({ data, stroke, steps = 1, onClick }: BrasilMapProps) => {
@@ -125,7 +125,7 @@ const BrasilMap = ({ data, stroke, steps = 1, onClick }: BrasilMapProps) => {
           })}
         </g>
       </svg>
-      <SubTitltes step={4} />
+      <SubTitltes step={steps} />
     </Fragment>
   );
 };
