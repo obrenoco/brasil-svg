@@ -22,7 +22,9 @@
 
 
 # :world_map: Roadmap
+
 - [ ] Add Tailwind
+- [ ] Add Style
 - [ ] Add tooltip
 - [ ] Full responsiveness suport
 - [ ] Add interactive table
