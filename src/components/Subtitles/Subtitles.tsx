@@ -4,10 +4,11 @@ import "./index.css";
 const square = (color: string) => (
   <div
     style={{
-      height: "15px",
-      width: "15px",
+      height: "22px",
+      width: "22px",
       backgroundColor: color,
       marginBottom: "2px",
+      borderRadius: "5px",
     }}
   ></div>
 );
@@ -17,23 +18,23 @@ export const SubTitltes = ({ step }: { step: number }) => {
     <ul className="subtitles">
       <li className="subtitle-item">
         {square(ColorSchema.Empty)}
-        {step}
+        <strong>{step}</strong>
       </li>
       <li className="subtitle-item">
         {square(ColorSchema.Min)}
-        {step * 2}
+        <strong>{step * 2}</strong>
       </li>
       <li className="subtitle-item">
         {square(ColorSchema.Step1)}
-        {step * 3}
+        <strong>{step * 3}</strong>
       </li>
       <li className="subtitle-item">
         {square(ColorSchema.Step2)}
-        {step * 4}
+        <strong>{step * 4}</strong>
       </li>
       <li className="subtitle-item">
         {square(ColorSchema.Max)}
-        {step * 4}
+        <strong>{step * 4}</strong>
       </li>
     </ul>
   );

@@ -13,6 +13,21 @@ type ComponentProps = {
   path: string;
 };
 
+type BrasilMapProps = {
+  data?: DataProps;
+  stroke?: string;
+  steps?: number;
+  onClick?: (e: React.MouseEvent<HTMLElement>) => any;
+};
+
+export enum ColorSchema {
+  Empty = "#c4c4c4",
+  Min = "#7AD599",
+  Step1 = "#569559",
+  Step2 = "#3b683e",
+  Max = "#2d4e2f",
+}
+
 export const mappedArray = (array: StateProps[]) =>
   Object.assign(
     {},
@@ -52,6 +67,20 @@ const State = ({
       strokeWidth="282.23677982"
       fill={color}
       d={path}
+      onMouseMove={(e) => {
+        const x = e.clientX;
+        const y = e.clientY;
+        console.log("x: ", x, "y: ", y);
+        return (
+          <span id="tooltip-span">
+            <img
+              alt=""
+              src="http://www.google.com/images/srpr/logo4w.png"
+              style={{ top: `${y + 20} px`, left: `${x + 20} px` }}
+            />
+          </span>
+        );
+      }}
     >
       <title>
         {title} - {value}
@@ -59,21 +88,6 @@ const State = ({
     </path>
   );
 };
-
-type BrasilMapProps = {
-  data?: DataProps;
-  stroke?: string;
-  steps?: number;
-  onClick?: (e: React.MouseEvent<HTMLElement>) => any;
-};
-
-export enum ColorSchema {
-  Empty = "#c4c4c4",
-  Min = "#7AD599",
-  Step1 = "#569559",
-  Step2 = "#3b683e",
-  Max = "#2d4e2f",
-}
 
 const BrasilMap = ({ data, stroke, steps = 1, onClick }: BrasilMapProps) => {
   const [items, setItems] = useState<BrazilSvgProps[]>(initialData);
