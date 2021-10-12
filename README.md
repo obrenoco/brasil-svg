@@ -1,46 +1,63 @@
-# Getting Started with Create React App
+<p align="center"><strong>Brasil SVG</strong></p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Peek 2021-10-11 20-59](https://user-images.githubusercontent.com/58960887/136870002-8c44748c-60ca-4107-a11e-cf095d6260cb.gif)
 
-## Available Scripts
 
-In the project directory, you can run:
+# :pushpin: TOC
+* [:rocket: Features](#rocket-features)
+* [:robot: Technologies](#robot-technologies)
+* [:world_map: Roadmap](#world_map-roadmap)
+* [:construction_worker: Install](#construction_worker-install)
+* [:bug: Encontrou um bug? Faltando uma feature específica?](#bug-issues)
+* [:closed_book: License](#closed_book-license)
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# :rocket: Features
+- [x] Brasil's SVG map
+- [x] Heatmap
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+# :world_map: Roadmap
+- [ ] Add Tailwind
+- [ ] Add tooltip
+- [ ] Add interactive table
+- [ ] Move to Next.js
+- [ ] Deploy as lib
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## :robot: Technologies
+- [x] React
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# :construction_worker: Install
+SSH URLs provide access to a Git repository via SSH, a secure protocol. If you use an SSH key registered in your Github account, clone the project using this command:
 
-### `yarn eject`
+```git clone git@github.com:obrenoco/brasil-svg```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+After making the clone, run in your terminal:`yarn install`.<br />
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+and than `yarn start`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<br/>
+3. Run Production Build yarn build
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+4. Run `yarn test` Test Suite
 
-## Learn More
+5. Run Linter `yarn lint`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+6. Run the `yarn format` Code Formatter
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+7. Launch Bundle Inspection Tool `yarn bundle-profile:analyze`
+
+# :bug: Issues
+Feel free to **file a new issue** with a respective title and description on this repository. If you already found a solution to your problem, **Don't miss out too and come help :)**!
+
+<br />
+
+# :closed_book: License
+
+
+Released in 2020.
+
+Made with love by [Breno Romeiro](https://github.com/obrenoco) 💜🚀
