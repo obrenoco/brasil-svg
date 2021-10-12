@@ -34,7 +34,7 @@ export const SubTitltes = ({ step }: { step: number }) => {
       </li>
       <li className="subtitle-item">
         {square(ColorSchema.Max)}
-        <strong>{step * 4}</strong>
+        <strong>{step * 5}</strong>
       </li>
     </ul>
   );
