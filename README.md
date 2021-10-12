@@ -1,6 +1,6 @@
 <p align="center"><strong>Brasil SVG</strong></p>
 
-![Peek 2021-10-11 21-12](https://user-images.githubusercontent.com/58960887/136870922-f97d2519-513c-493b-a5ad-bf7f3260a7b3.gif)
+![Peek 2021-10-12 03-15](https://user-images.githubusercontent.com/58960887/136901866-1433d839-cf58-4475-92ae-7f3256de1a86.gif)
 
 
 # :pushpin: TOC
@@ -16,18 +16,18 @@
 - [x] Brasil's SVG map
 - [x] Heatmap
 
+## :robot: Technologies
+- [x] React
+- [x] Typescript
+
 
 # :world_map: Roadmap
 - [ ] Add Tailwind
 - [ ] Add tooltip
+- [ ] Full responsiveness suport
 - [ ] Add interactive table
 - [ ] Move to Next.js
 - [ ] Deploy as lib
-
-
-
-## :robot: Technologies
-- [x] React
 
 
 # :construction_worker: Install
