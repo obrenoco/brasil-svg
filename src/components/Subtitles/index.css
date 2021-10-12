@@ -1,7 +1,7 @@
 .subtitles {
   position: relative;
-  bottom: 0px;
-  left: 10px;
+  bottom: 50px;
+  left: 20px;
   width: fit-content;
   padding: 5px 15px;
   color: #8a8787;
@@ -12,6 +12,11 @@
   list-style: none;
   text-align: center;
   color: white;
+  letter-spacing: 0.2rem;
+}
+
+.subtitles strong {
+  margin-top: 0.3rem;
 }
 
 li.subtitle-item {
@@ -19,8 +24,9 @@ li.subtitle-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 15px;
 }
 
 li.subtitle-item:not(:last-child) {
-  margin-right: 8px;
+  margin-right: 20px;
 }

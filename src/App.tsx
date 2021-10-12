@@ -13,7 +13,10 @@ export default function App() {
         rel="noreferrer"
         id="author"
       >
-        Made by: Brenoco
+        <img
+          src="https://i.imgur.com/NfKqtes.png"
+          style={{ width: "2.4rem", height: "2.4rem" }}
+        ></img>
       </a>
     </div>
   );
