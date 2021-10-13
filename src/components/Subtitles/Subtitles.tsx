@@ -18,19 +18,19 @@ export const SubTitltes = ({ step }: { step: number }) => {
     <ul className="subtitles">
       <li className="subtitle-item">
         {square(ColorSchema.Empty)}
-        <strong>{step}</strong>
+        <strong>0</strong>
       </li>
       <li className="subtitle-item">
         {square(ColorSchema.Min)}
-        <strong>{step * 2}</strong>
+        <strong>{step}</strong>
       </li>
       <li className="subtitle-item">
         {square(ColorSchema.Step1)}
-        <strong>{step * 3}</strong>
+        <strong>{step * 2}</strong>
       </li>
       <li className="subtitle-item">
         {square(ColorSchema.Step2)}
-        <strong>{step * 4}</strong>
+        <strong>{step * 3}</strong>
       </li>
       <li className="subtitle-item">
         {square(ColorSchema.Max)}

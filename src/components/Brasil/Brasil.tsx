@@ -1,4 +1,7 @@
-import { Fragment, useCallback, useEffect, useMemo, useState } from "react";
+import Tippy from "@tippyjs/react";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { followCursor } from "tippy.js";
+import "tippy.js/dist/tippy.css";
 import { SubTitltes } from "../Subtitles/Subtitles";
 import { BrazilSvgProps, DataProps, StateProps } from "./types";
 import { initialData } from "./ufs";
@@ -59,42 +62,36 @@ const State = ({
   onClick,
 }: ComponentProps) => {
   return (
-    <path
-      id={id}
-      key={id}
-      onClick={onClick}
-      stroke={stroke}
-      strokeWidth="282.23677982"
-      fill={color}
-      d={path}
-      onMouseMove={(e) => {
-        const x = e.clientX;
-        const y = e.clientY;
-        console.log("x: ", x, "y: ", y);
-        return (
-          <span id="tooltip-span">
-            <img
-              alt=""
-              src="http://www.google.com/images/srpr/logo4w.png"
-              style={{ top: `${y + 20} px`, left: `${x + 20} px` }}
-            />
-          </span>
-        );
-      }}
+    <Tippy
+      content={
+        <span>
+          {title} - {value}
+        </span>
+      }
+      followCursor
+      plugins={[followCursor]}
     >
-      <title>
-        {title} - {value}
-      </title>
-    </path>
+      <path
+        id={id}
+        key={id}
+        onClick={onClick}
+        stroke={stroke}
+        strokeWidth="282.23677982"
+        fill={color}
+        d={path}
+      >
+        <title>
+          {title} - {value}
+        </title>
+      </path>
+    </Tippy>
   );
 };
 
 const BrasilMap = ({ data, stroke, steps = 1, onClick }: BrasilMapProps) => {
   const [items, setItems] = useState<BrazilSvgProps[]>(initialData);
   const mapped = useMemo(() => mappedArray(items), [items]);
-  const [color, setColor] = useState();
-
-  console.log(color, setColor, stroke, setItems);
+  const [coordinates, setCoordinates] = useState({ x: 0, y: 0 });
 
   const heatmapColor = useCallback(
     (value: number) => {
@@ -119,11 +116,10 @@ const BrasilMap = ({ data, stroke, steps = 1, onClick }: BrasilMapProps) => {
   }, [data]);
 
   return (
-    <Fragment>
+    <div style={{ position: "relative" }}>
       <svg id="br-map" viewBox="0 0 220000 194010">
         <g id="Estados">
           {items.map((x) => {
-            console.log(mapped[x.id].value);
             return (
               <State
                 id={x.id}
@@ -140,7 +136,7 @@ const BrasilMap = ({ data, stroke, steps = 1, onClick }: BrasilMapProps) => {
         </g>
       </svg>
       <SubTitltes step={steps} />
-    </Fragment>
+    </div>
   );
 };
 
