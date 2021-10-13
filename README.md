@@ -23,12 +23,12 @@
 
 # :world_map: Roadmap
 
-- [ ] Add Tailwind
+- [ ] [Add Tailwind](https://tailwindcss.com/)
 - [ ] Add Style
-- [ ] Add tooltip
+- [ ] [Add tooltip](https://atomiks.github.io/tippyjs/#follow-cursor)
 - [ ] Full responsiveness suport
 - [ ] Add interactive table
-- [ ] Move to Next.js
+- [ ] [Move to Next.js](https://nextjs.org/)
 - [ ] Deploy as lib
 
 
