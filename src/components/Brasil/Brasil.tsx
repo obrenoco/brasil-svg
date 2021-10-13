@@ -91,15 +91,14 @@ const State = ({
 const BrasilMap = ({ data, stroke, steps = 1, onClick }: BrasilMapProps) => {
   const [items, setItems] = useState<BrazilSvgProps[]>(initialData);
   const mapped = useMemo(() => mappedArray(items), [items]);
-  const [coordinates, setCoordinates] = useState({ x: 0, y: 0 });
 
   const heatmapColor = useCallback(
     (value: number) => {
-      if (value <= 0) return ColorSchema.Empty;
-      if (value <= steps) return ColorSchema.Min;
-      if (value <= steps * 2) return ColorSchema.Step1;
-      if (value <= steps * 3) return ColorSchema.Step2;
-      if (value >= steps * 3) return ColorSchema.Max;
+      if (value === 0) return ColorSchema.Empty;
+      if (value < steps * 2) return ColorSchema.Min;
+      if (value < steps * 3) return ColorSchema.Step1;
+      if (value < steps * 4) return ColorSchema.Step2;
+      if (value >= steps * 4) return ColorSchema.Max;
       return "white";
     },
     [steps]
