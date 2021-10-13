@@ -1,7 +1,6 @@
 <p align="center"><strong>Brasil SVG</strong></p>
 
-![Peek 2021-10-12 03-15](https://user-images.githubusercontent.com/58960887/136901866-1433d839-cf58-4475-92ae-7f3256de1a86.gif)
-
+![Peek 2021-10-13 14-14](https://user-images.githubusercontent.com/58960887/137181382-8738224d-f598-4a6c-ae08-653c46e317a8.gif)
 
 # :pushpin: TOC
 * [:rocket: Features](#rocket-features)
@@ -25,7 +24,7 @@
 
 - [ ] [Add Tailwind](https://tailwindcss.com/)
 - [ ] Add Style
-- [ ] [Add tooltip](https://atomiks.github.io/tippyjs/#follow-cursor)
+- [x] [Add tooltip](https://atomiks.github.io/tippyjs/#follow-cursor)
 - [ ] Full responsiveness suport
 - [ ] Add interactive table
 - [ ] [Move to Next.js](https://nextjs.org/)
