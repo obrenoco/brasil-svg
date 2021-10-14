@@ -21,15 +21,13 @@
 
 
 # :world_map: Roadmap
-
-- [ ] [Add Tailwind](https://tailwindcss.com/)
 - [ ] Add Style
-- [x] [Add tooltip](https://atomiks.github.io/tippyjs/#follow-cursor)
 - [ ] Full responsiveness suport
 - [ ] Add interactive table
 - [ ] [Move to Next.js](https://nextjs.org/)
 - [ ] Deploy as lib
-
+- [x] [Add Tailwind](https://tailwindcss.com/)
+- [x] [Add tooltip](https://atomiks.github.io/tippyjs/#follow-cursor)
 
 # :construction_worker: Install
 SSH URLs provide access to a Git repository via SSH, a secure protocol. If you use an SSH key registered in your Github account, clone the project using this command:
