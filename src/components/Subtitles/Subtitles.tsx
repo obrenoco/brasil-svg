@@ -13,7 +13,7 @@ const itemClassName = "flex flex-col items-center";
 
 export const SubTitltes = ({ step }: { step: number }) => {
   return (
-    <ul className="relative bottom-14 left-5 w-max px-1 py-4 no-underline text-sm flex text-white gap-6">
+    <ul className=" w-max px-1 py-4 no-underline text-sm flex text-white gap-6">
       <li className={itemClassName}>
         {square(ColorSchema.Empty)}
         <strong>0</strong>
