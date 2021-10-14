@@ -22,7 +22,7 @@
 
 # :world_map: Roadmap
 - [ ] Add Style
-- [ ] Full responsiveness suport
+- [ ] Full responsiveness support
 - [ ] Add interactive table
 - [ ] [Move to Next.js](https://nextjs.org/)
 - [ ] Deploy as lib
