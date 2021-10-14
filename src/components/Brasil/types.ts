@@ -16,6 +16,14 @@ export type BrazilSvgProps = {
   path: string;
 };
 
+export enum ColorSchema {
+  Empty = "#c4c4c4",
+  Min = "#d6d6d6",
+  Step1 = "#939393",
+  Step2 = "#666666",
+  Max = "#4c4c4c",
+}
+
 export enum UF {
   Amazonas = "AM",
   Acre = "AC",
