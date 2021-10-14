@@ -115,7 +115,7 @@ const BrasilMap = ({
       if (value >= steps * 4) return colorSchema?.max || ColorSchema.Max;
       return "white";
     },
-    [steps]
+    [steps, colorSchema]
   );
 
   useEffect(() => {
