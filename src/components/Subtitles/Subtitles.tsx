@@ -1,38 +1,36 @@
 import { ColorSchema } from "../Brasil/Brasil";
-import "./index.css";
 
 const square = (color: string) => (
   <div
+    className="w-5 h-5 mb-1 rounded-sm"
     style={{
-      height: "22px",
-      width: "22px",
       backgroundColor: color,
-      marginBottom: "2px",
-      borderRadius: "5px",
     }}
   ></div>
 );
 
+const itemClassName = "flex flex-col items-center";
+
 export const SubTitltes = ({ step }: { step: number }) => {
   return (
-    <ul className="subtitles">
-      <li className="subtitle-item">
+    <ul className=" w-max px-1 py-4 no-underline text-sm flex text-white gap-6">
+      <li className={itemClassName}>
         {square(ColorSchema.Empty)}
         <strong>0</strong>
       </li>
-      <li className="subtitle-item">
+      <li className={itemClassName}>
         {square(ColorSchema.Min)}
         <strong>{step}</strong>
       </li>
-      <li className="subtitle-item">
+      <li className={itemClassName}>
         {square(ColorSchema.Step1)}
         <strong>{step * 2}</strong>
       </li>
-      <li className="subtitle-item">
+      <li className={itemClassName}>
         {square(ColorSchema.Step2)}
         <strong>{step * 3}</strong>
       </li>
-      <li className="subtitle-item">
+      <li className={itemClassName}>
         {square(ColorSchema.Max)}
         <strong>
           {">"}

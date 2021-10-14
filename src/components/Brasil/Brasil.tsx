@@ -3,6 +3,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { followCursor } from "tippy.js";
 import "tippy.js/dist/tippy.css";
 import { SubTitltes } from "../Subtitles/Subtitles";
+import "./index.css";
 import { BrazilSvgProps, DataProps, StateProps } from "./types";
 import { initialData } from "./ufs";
 
@@ -76,9 +77,10 @@ const State = ({
         key={id}
         onClick={onClick}
         stroke={stroke}
-        strokeWidth="282.23677982"
+        strokeWidth="370"
         fill={color}
         d={path}
+        className="cursor-pointer"
       >
         <title>
           {title} - {value}
@@ -115,7 +117,7 @@ const BrasilMap = ({ data, stroke, steps = 1, onClick }: BrasilMapProps) => {
   }, [data]);
 
   return (
-    <div style={{ position: "relative" }}>
+    <div className="relative">
       <svg id="br-map" viewBox="0 0 220000 194010">
         <g id="Estados">
           {items.map((x) => {

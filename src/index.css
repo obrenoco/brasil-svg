@@ -1,5 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
-  font-family: "Montserrat", cursive;
+  font-family: "Teko", cursive;
   font-size: 16px;
 }
 
@@ -9,26 +13,8 @@ body {
 
 h1 {
   color: #7ad599;
-  cursor: pointer;
-  font-size: 4rem;
-  width: fit-content;
-  margin: 2rem auto;
 }
 
 h1:hover {
-  color: #df6a0c;
-}
-
-#author {
-  position: fixed;
-  bottom: 10px;
-  right: 30px;
-  color: #8a8787;
-  font-family: "Teko", sans-serif;
-  text-decoration: none;
-  font-size: 1.3rem;
-}
-
-#author:hover {
   color: #df6a0c;
 }

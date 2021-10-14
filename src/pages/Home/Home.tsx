@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import mock from "../../api/mock.json";
 import BrasilMap from "../../components/Brasil/Brasil";
 import { StateProps } from "../../components/Brasil/types";
-import "./index.css";
 
 export type DataProps = {
   data: {
@@ -29,7 +28,7 @@ export const Home = () => {
     req();
   }, []);
   return (
-    <section style={{ width: "70vw", maxWidth: "700px", margin: "0 auto" }}>
+    <section className="w-4/6 max-w-2xl m-auto">
       <BrasilMap data={data} steps={100} onClick={(e) => console.log(e)} />
     </section>
   );
