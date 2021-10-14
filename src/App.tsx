@@ -6,7 +6,9 @@ import { Home } from "./pages/Home/Home";
 export default function App() {
   return (
     <div className="App">
-      <h1 className="text-center text-7xl w-full m-auto my-7">Brasil SVG</h1>
+      <h1 className="text-center text-7xl m-auto my-7 cursor-pointer w-max">
+        Brasil SVG
+      </h1>
       <Home />
       <Tippy content="Made with ❤️" placement="top-start">
         <a
