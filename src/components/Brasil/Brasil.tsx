@@ -1,10 +1,16 @@
 import Tippy from "@tippyjs/react";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import {
+  SVGAttributes,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { followCursor } from "tippy.js";
 import "tippy.js/dist/tippy.css";
 import { SubTitltes } from "../Subtitles/Subtitles";
 import "./index.css";
-import { BrazilSvgProps, DataProps, StateProps } from "./types";
+import { BrazilSvgProps, ColorSchema, DataProps, StateProps } from "./types";
 import { initialData } from "./ufs";
 
 type ComponentProps = {
@@ -12,7 +18,7 @@ type ComponentProps = {
   color: string;
   title: string;
   value: string | number;
-  onClick: () => any;
+  onClick?: () => any;
   stroke?: string;
   path: string;
 };
@@ -21,16 +27,15 @@ type BrasilMapProps = {
   data?: DataProps;
   stroke?: string;
   steps?: number;
-  onClick?: (e: React.MouseEvent<HTMLElement>) => any;
-};
-
-export enum ColorSchema {
-  Empty = "#c4c4c4",
-  Min = "#7AD599",
-  Step1 = "#569559",
-  Step2 = "#3b683e",
-  Max = "#2d4e2f",
-}
+  handleClick?: (e: React.MouseEvent<HTMLElement>) => any;
+  colorSchema?: {
+    empty: string;
+    min: string;
+    step1: string;
+    step2: string;
+    max: string;
+  };
+} & SVGAttributes<SVGElement>;
 
 export const mappedArray = (array: StateProps[]) =>
   Object.assign(
@@ -90,17 +95,24 @@ const State = ({
   );
 };
 
-const BrasilMap = ({ data, stroke, steps = 1, onClick }: BrasilMapProps) => {
+const BrasilMap = ({
+  data,
+  stroke,
+  steps = 1,
+  handleClick,
+  colorSchema,
+  ...props
+}: BrasilMapProps) => {
   const [items, setItems] = useState<BrazilSvgProps[]>(initialData);
   const mapped = useMemo(() => mappedArray(items), [items]);
 
   const heatmapColor = useCallback(
     (value: number) => {
-      if (value === 0) return ColorSchema.Empty;
-      if (value < steps * 2) return ColorSchema.Min;
-      if (value < steps * 3) return ColorSchema.Step1;
-      if (value < steps * 4) return ColorSchema.Step2;
-      if (value >= steps * 4) return ColorSchema.Max;
+      if (value === 0) return colorSchema?.empty || ColorSchema.Empty;
+      if (value < steps * 2) return colorSchema?.min || ColorSchema.Min;
+      if (value < steps * 3) return colorSchema?.step1 || ColorSchema.Step1;
+      if (value < steps * 4) return colorSchema?.step2 || ColorSchema.Step2;
+      if (value >= steps * 4) return colorSchema?.max || ColorSchema.Max;
       return "white";
     },
     [steps]
@@ -118,25 +130,23 @@ const BrasilMap = ({ data, stroke, steps = 1, onClick }: BrasilMapProps) => {
 
   return (
     <div className="relative">
-      <svg id="br-map" viewBox="0 0 220000 194010">
+      <svg id="br-map" viewBox="0 0 220000 194010" {...props}>
         <g id="Estados">
-          {items.map((x) => {
-            return (
-              <State
-                id={x.id}
-                color={`${heatmapColor(mapped[x.id].value)}`}
-                onClick={onClick as any}
-                title={x.title}
-                value={x.value}
-                key={x.id}
-                path={x.path}
-                stroke={stroke}
-              />
-            );
-          })}
+          {items.map((x) => (
+            <State
+              id={x.id}
+              color={`${heatmapColor(mapped[x.id].value)}`}
+              onClick={handleClick as any}
+              title={x.title}
+              value={x.value}
+              key={x.id}
+              path={x.path}
+              stroke={stroke}
+            />
+          ))}
         </g>
       </svg>
-      <SubTitltes step={steps} />
+      <SubTitltes step={steps} colorSchema={colorSchema} />
     </div>
   );
 };
