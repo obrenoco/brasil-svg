@@ -13,19 +13,8 @@ import "./index.css";
 import { BrazilSvgProps, ColorSchema, DataProps, StateProps } from "./types";
 import { initialData } from "./ufs";
 
-type ComponentProps = {
-  id: string;
-  color: string;
-  title: string;
-  value: string | number;
-  onClick?: () => any;
-  stroke?: string;
-  path: string;
-};
-
 type BrasilMapProps = {
   data?: DataProps;
-  stroke?: string;
   steps?: number;
   handleClick?: (e: React.MouseEvent<HTMLElement>) => any;
   colorSchema?: {
@@ -37,7 +26,7 @@ type BrasilMapProps = {
   };
 } & SVGAttributes<SVGElement>;
 
-export const mappedArray = (array: StateProps[]) =>
+export const mappedData = (array: StateProps[]) =>
   Object.assign(
     {},
     ...array.map((item) => ({
@@ -45,7 +34,7 @@ export const mappedArray = (array: StateProps[]) =>
     }))
   );
 
-export const mappedInitialArray = (array: BrazilSvgProps[]) =>
+export const mappedInitialData = (array: BrazilSvgProps[]) =>
   Object.assign(
     {},
     ...array.map((item) => ({
@@ -58,53 +47,18 @@ export const mappedInitialArray = (array: BrazilSvgProps[]) =>
     }))
   );
 
-const State = ({
-  id,
-  color,
-  title,
-  stroke = "#ffffff",
-  value,
-  path,
-  onClick,
-}: ComponentProps) => {
-  return (
-    <Tippy
-      content={
-        <span>
-          {title} - {value}
-        </span>
-      }
-      followCursor
-      plugins={[followCursor]}
-    >
-      <path
-        id={id}
-        key={id}
-        onClick={onClick}
-        stroke={stroke}
-        strokeWidth="370"
-        fill={color}
-        d={path}
-        className="cursor-pointer"
-      >
-        <title>
-          {title} - {value}
-        </title>
-      </path>
-    </Tippy>
-  );
-};
-
 const BrasilMap = ({
   data,
-  stroke,
+  stroke = "#fff",
+  strokeWidth = "450",
   steps = 1,
-  handleClick,
+  onClick,
   colorSchema,
+  className,
   ...props
 }: BrasilMapProps) => {
   const [items, setItems] = useState<BrazilSvgProps[]>(initialData);
-  const mapped = useMemo(() => mappedArray(items), [items]);
+  const mapped = useMemo(() => mappedData(items), [items]);
 
   const heatmapColor = useCallback(
     (value: number) => {
@@ -121,30 +75,49 @@ const BrasilMap = ({
   useEffect(() => {
     if (data)
       return setItems(
-        (data?.data as any).map((x: any) => ({
+        (data?.data).map((x: any) => ({
           ...x,
-          path: mappedInitialArray(initialData)[x.id].path,
+          path: mappedInitialData(initialData)[x.id].path,
         }))
       );
   }, [data]);
 
+  const States = useMemo(
+    () =>
+      items.map((x) => (
+        <Tippy
+          key={x.id}
+          content={
+            <span>
+              {x.title} - {x.value}
+            </span>
+          }
+          followCursor
+          plugins={[followCursor]}
+        >
+          <path
+            id={x.id}
+            key={x.id}
+            d={x.path}
+            onClick={onClick}
+            stroke={stroke}
+            strokeWidth={strokeWidth}
+            fill={`${heatmapColor(mapped[x.id].value)}`}
+            className={`cursor-pointer ${className}`}
+          >
+            <title>
+              {x.title} - {x.value}
+            </title>
+          </path>
+        </Tippy>
+      )),
+    [items, className, heatmapColor, mapped, onClick, stroke, strokeWidth]
+  );
+
   return (
     <div className="relative">
       <svg id="br-map" viewBox="0 0 220000 194010" {...props}>
-        <g id="Estados">
-          {items.map((x) => (
-            <State
-              id={x.id}
-              color={`${heatmapColor(mapped[x.id].value)}`}
-              onClick={handleClick as any}
-              title={x.title}
-              value={x.value}
-              key={x.id}
-              path={x.path}
-              stroke={stroke}
-            />
-          ))}
-        </g>
+        <g id="Estados">{States}</g>
       </svg>
       <SubTitltes step={steps} colorSchema={colorSchema} />
     </div>

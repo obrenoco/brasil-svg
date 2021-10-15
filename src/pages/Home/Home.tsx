@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import mock from "../../api/mock.json";
 import BrasilMap from "../../components/Brasil/Brasil";
-import { StateProps } from "../../components/Brasil/types";
 
 export type DataProps = {
   data: {
@@ -13,20 +12,25 @@ export type DataProps = {
   };
 };
 
+type Data = {
+  data: { id: string; title: string; value: number }[];
+  status: string;
+};
+
 export const Home = () => {
-  const [data, setData] =
-    useState<{ data: StateProps[]; status: string; onClick: () => any }>();
+  const [data, setData] = useState<Data>();
   useEffect(() => {
     const req = () => {
       try {
         const response = mock;
-        setData(response as any);
+        setData(response);
       } catch (error) {
         console.log(error);
       }
     };
     req();
   }, []);
+
   return (
     <section className="w-4/6 max-w-2xl m-auto">
       <BrasilMap
@@ -39,7 +43,7 @@ export const Home = () => {
           step1: "#569559",
           step2: "#3b683e",
         }}
-        handleClick={(e: React.MouseEvent<HTMLElement>) => console.log(e)}
+        onClick={(e) => console.log(e)}
       />
     </section>
   );
