@@ -1,15 +1,8 @@
+import React from "react";
+import { BrasilMapProps } from "../Brasil/Brasil";
 import { ColorSchema } from "../Brasil/types";
 
-type SubtitleProps = {
-  step: number;
-  colorSchema?: {
-    empty: string;
-    min: string;
-    step1: string;
-    step2: string;
-    max: string;
-  };
-};
+type SubtitleProps = Pick<BrasilMapProps, "steps">;
 
 const itemClassName = "flex flex-col items-center";
 const square = (color: string) => (
@@ -21,14 +14,18 @@ const square = (color: string) => (
   ></div>
 );
 
-export const SubTitltes = ({ step, colorSchema }: SubtitleProps) => {
+export const SubTitltes = ({ steps }: SubtitleProps) => {
   return (
     <ul className=" w-max px-1 py-4 no-underline text-sm flex text-white gap-6">
       <li className={itemClassName}>
-        {square(colorSchema?.empty || ColorSchema.Empty)}
-        <strong>0</strong>
+        {square(steps.empty.color || ColorSchema.Empty)}
+        {steps.empty.placeholder}
       </li>
       <li className={itemClassName}>
+        {square(steps?.min.color || ColorSchema.Min)}
+        {steps.min.placeholder}
+      </li>
+      {/* <li className={itemClassName}>
         {square(colorSchema?.min || ColorSchema.Min)}
         <strong>{step}</strong>
       </li>
@@ -46,7 +43,7 @@ export const SubTitltes = ({ step, colorSchema }: SubtitleProps) => {
           {">"}
           {step * 3}
         </strong>
-      </li>
+      </li> */}
     </ul>
   );
 };

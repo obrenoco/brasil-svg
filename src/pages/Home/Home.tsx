@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import mock from "../../api/mock.json";
 import BrasilMap from "../../components/Brasil/Brasil";
 
@@ -35,14 +35,19 @@ export const Home = () => {
     <section className="w-4/6 max-w-2xl m-auto">
       <BrasilMap
         data={data}
-        steps={100}
-        colorSchema={{
-          empty: "#c4c4c4",
-          min: "#7AD599",
-          max: "#2d4e2f",
-          step1: "#569559",
-          step2: "#3b683e",
+        steps={{
+          empty: {
+            step: 0,
+            color: "#c4c4c4",
+            placeholder: <Fragment>Empty</Fragment>,
+          },
+          min: {
+            step: 1,
+            color: "#7AD599",
+            placeholder: <Fragment>R$ 0</Fragment>,
+          },
         }}
+        stroke="#7c7c7c"
         onClick={(e) => console.log(e)}
       />
     </section>
